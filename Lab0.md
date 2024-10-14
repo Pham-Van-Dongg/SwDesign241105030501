@@ -1,10 +1,10 @@
 # Lab 0
 
-## heading 1.1
+## Heading 1.1
 
 Đây là giới thiệu của lab0
 
-## heading 1.2
+## Heading 1.2
 
 * Đây là biểu đồ lớp cơ bản
 
@@ -15,5 +15,9 @@
 ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3fTLQ75gaPM2hgwTWePFVdfcdYQAK7XYINA6Wcz-MMQg9XSNL8M27b36iRGa8pMl93CviIHLKy5A8JClEQSq9PKBHGjOPH1G1OnlfP1QKPAQbyBb02H0zWC0003__mC0)
 
 * Đây là biểu đồ gói
+
+![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bT1Od9sOdggWb9eSMgHWczY7f2JcvfNegHGpQK01CavYSN52Y199AvZIcvc7bSj5qAtRtvPPYfExM1P9BvxQbvHAaW_s59TtHexg94GOtHrxQ1A75BpKa2k10000F__0m00)
+
+* Đây là biểu đồ tuần tự
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bT1Od9sOdggWb9eSMgHWczY7f2JcvfNegHGpQK01CavYSN52Y199AvZIcvc7bSj5qAtRtvPPYfExM1P9BvxQbvHAaW_s59TtHexg94GOtHrxQ1A75BpKa2k10000F__0m00)
