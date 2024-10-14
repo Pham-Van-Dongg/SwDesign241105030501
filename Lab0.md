@@ -21,3 +21,7 @@
 * Đây là biểu đồ tuần tự
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/N9113e8m44NtFSN4FHVemW2oCM61DBeVOSGcs68xDV5iBZoILv022t4vy_wV_pEVrplrZ8x3hHVOi7LmzEJ4CAvqemSq39lITjf0XHrj03sKrHfdWQzanXbPMmEAt4CtipHJQsc1Z6VqCono8M8O9DlnfeIQxe4ymnGdoYhkCoNXXBrkaGbsZjeOXBqNcOguo2KS0hddr1hsvc95aKEoE6lYuCmFYwubxQzrJJxqFAMEWkYGSv581ciyYPHC6z_q1G00__y30000)
+
+* Đây là biểu đồ trạng thái
+
+![Diagram](https://www.planttext.com/api/plantuml/png/J8xB3G8n34JlhiB7tHOs1rQY14G14V5k8YLsP6T1rCQ1acY1y95WJaypStYFstssvhLj9SCRO3eQAKebDlIrkc-Hk6xDCCkQ64zAWRWbdyr1Md3O_mey-vp2RiGMYN6uaes0FTCXoWMZ5Af-9GUKZN1W-Lz9LHGBcNqk7DBIjQJ2tFdb-0G00F__0m00)
