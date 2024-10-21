@@ -268,7 +268,7 @@
     
     - DịchVụThanhToán truy xuất thông tin nhân viên và timecard từ KhoDữLiệuNhânViên và KhoDữLiệuTimecard để tính toán số tiền cần trả.
     
-    - DịchVụThanhToán thực hiện thanh toán và lưu thông tin vào KhoDuLieuThanhToán.
+    - DịchVụThanhToán thực hiện thanh toán và lưu thông tin vào KhoDữLiệuThanhToán.
 
    #### 5.5 Tài liệu mô tả
    
