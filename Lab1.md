@@ -191,14 +191,64 @@
 
    #### 4.3. Xác định nhiệm vụ của từng lớp phân tích
    
-    - Lớp NhânViên: Gửi yêu cầu tạo mới, cập nhật hoặc xóa timecard đến lớp dịch vụ.
+    Lớp NhânViên: Gửi yêu cầu tạo mới, cập nhật hoặc xóa timecard đến lớp dịch vụ.
     
-    - Lớp DịchVụTimecard:
+    Lớp DịchVụTimecard:
      - Nhận yêu cầu từ nhân viên.
      - Xử lý logic nghiệp vụ liên quan đến việc tạo mới, cập nhật hoặc xóa timecard.
      - Gửi yêu cầu lưu trữ đến kho dữ liệu.
      - Thông báo kết quả lại cho nhân viên.
     
-    - Lớp KhoDữLiệuTimecard: Quản lý lưu trữ thông tin timecard và xử lý các yêu cầu liên quan đến truy vấn và cập nhật timecard trong cơ sở dữ liệu.
+    Lớp KhoDữLiệuTimecard: Quản lý lưu trữ thông tin timecard và xử lý các yêu cầu liên quan đến truy vấn và cập nhật timecard trong cơ sở dữ liệu.
+    
    #### 4.4. Biểu đồ lớp (Class Diagram) mô tả các lớp phân tích
+
+   
    ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bToJc9niO9Vnk55UM6PXrVbALHpAIZeAkGc-cKa0aLIynIi589BYZBpqi7Y9Qbvs2LI4lCoWXEJCq8oSrEJ4ujIWB8-cSKbDZ2-7LSj5zGok1A8LNdfYPL0rIw99QbWVd6-UsQ-Js8kq8vae7XQJdvY2THDBgMEIDR23NHvkBixEIFiuUwbA4OhA9GaviD4DFAWpjO46b2Mdva2Lf2SM03qJWbSKGcKWQAe8ZyHjmAu8xmpye7kME-J-N1tUocQEt9AI_5RaPDO2LU027fDp40anZr8aQchQmSFRdHnp53ZmXAG89LOlSRba9gN0af100000F__0m00)
+
+   **Giải thích:**
+   
+    Quan hệ giữa các lớp:
+    - NhânViên có một danh sách các Timecard và gửi yêu cầu tạo hoặc cập nhật timecard đến DịchVụTimecard.
+    - DịchVụTimecard liên kết với KhoDữLiệuTimecard để thực hiện các thao tác lưu trữ hoặc xóa timecard.
+
+    Nhiệm vụ của các lớp:
+    - NhânViên thực hiện thao tác liên quan đến timecard.
+    - DịchVụTimecard xử lý logic nghiệp vụ như tạo mới, cập nhật hoặc xóa timecard.
+    - KhoDữLiệuTimecard thực hiện thao tác truy vấn và lưu trữ timecard trong cơ sở dữ liệu.
+    
+  #### 5. Hợp nhất kết quả phân tích
+
+   ##### 5.1 Tóm tắt các lớp phân tích chính
+   
+   ###### Các lớp phân tích được xác định qua hai ca sử dụng:
+
+    NhânViên(Employee): Đại diện cho nhân viên với các thông tin cơ bản như mã nhân viên, tên, phương thức thanh toán, danh sách timecard.
+
+    Timecard: Đại diện cho thông tin giờ làm việc của nhân viên, bao gồm ngày làm việc, số giờ làm việc và mã dự án.
+
+    DịchVụThanhToán (PaymentService): Quản lý các hoạt động liên quan đến tính toán và thực hiện thanh toán lương cho nhân viên.
+
+    DịchVụTimecard (TimecardService): Chịu trách nhiệm xử lý các hoạt động liên quan đến timecard như tạo mới, cập nhật hoặc xóa timecard.
+
+    KhoDữLiệuNhânViên (EmployeeRepository): Quản lý lưu trữ và truy xuất thông tin nhân viên.
+
+    KhoDữLiệuTimecard (TimecardRepository): Quản lý lưu trữ và truy vấn thông tin timecard.
+
+    KhoDữLiệuThanhToán (PaymentRepository): Quản lý lưu trữ và truy vấn thông tin về thanh toán.
+
+   ##### 5.2 Mối quan hệ giữa các lớp
+   
+   ###### Qua hai ca sử dụng, chúng ta thấy rằng các lớp có mối quan hệ qua lại với nhau để hoàn thành các nhiệm vụ khác nhau trong hệ thống:
+    
+    Lớp NhânViên liên kết với Timecard để quản lý thông tin giờ làm việc của nhân viên.
+    
+    DịchVụTimecard và DịchVụThanhToán sử dụng thông tin từ các lớp KhoDữLiệuTimecard và KhoDữLiệuNhânViên để truy xuất thông tin cần thiết cho các thao tác.
+    
+    DịchVụThanhToán cũng liên kết với KhoDữLiệuThanhToán để lưu và quản lý thông tin thanh toán.
+    
+   ##### 5.3 Biểu đồ lớp hợp nhất
+   
+   ##### Biểu đồ lớp dưới đây hợp nhất các lớp từ hai ca sử dụng và thể hiện mối quan hệ giữa chúng:
+
+   ![Diagram](https://www.planttext.com/api/plantuml/png/d5InJiCm4Dtp5HxBa1z0g2fI9928kZJgVd92RIcngyH6L8YPWQy0YOM53yZ0q2_95_0Bd9lKJM8tGxVuxjszz-vE-Qj_5vM2KkaY3sWELKMMRFyfrdp_BSXBG4X82bWom4Wco3LPgPABpI6kCk5FR9cMOfCmJHFCiqJ2291BuFxI5F4he2pXHKQXJ34RyqhT7D_pu3NeT5f8gr9iO8Ve25HsU5VoZiiO2kIW67z4JjNPYVHjZzOsZ9hwdR9rKtzrilSVxGW8KRor4HjZCz59ly8cJvAdBGJjtcFGMdPXFgQ-2Mm2yXZnir3Ouk2K1QdkOm1wbd0UO4KyC8awVcBUr6zwj7H2SjWbp6oHsoNFJeTWkfrAplGSUSkrdfPjA8-08TNe12xqw6pLAEeydhQcnX57erCo5ElaZPpUVCDmRczt77SFOm9XxGIUUp9OxpO2xvcxS6_tYOBUEImoaPh_oJy0003__mC0)
