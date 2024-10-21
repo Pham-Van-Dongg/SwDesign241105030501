@@ -88,24 +88,33 @@
    - loaiNhanVien
      
   Lớp DịchVụThanhToán (PaymentService): Lớp chính chịu trách nhiệm xử lý việc tính toán và thực hiện thanh toán cho nhân viên. Lớp này sử dụng thông tin từ nhân viên và timecard để tính toán số tiền phải trả.
-    **Thuộc tính:**
+
+   **Thuộc tính:**
+   
      - ngayThanhToan  
-    **Phương thức:**
+     
+   **Phương thức:**
+   
      - tinhToanLuong(nhanVien)
      - thucHienThanhToan(nhanVien)
 
   Lớp KhoDuLieuThanhToán (PaymentRepository): Quản lý việc lưu trữ và truy vấn thông tin thanh toán từ cơ sở dữ liệu.
-    **Phương thức:**
+  
+   **Phương thức:**
+   
      - luuThongTinThanhToan(thongTinThanhToan)
      - layThongTinThanhToan(maNhanVien)
 
   Lớp Timecard: Đại diện cho thẻ thời gian mà nhân viên nhập liệu. Thẻ này chứa thông tin về số giờ làm việc và mã dự án tương ứng.
-     **Thuộc tính:**
-      - ngay
-      - soGioLamViec
-      - maDuAn
+  
+   **Thuộc tính:**
+   
+    - ngay
+    - soGioLamViec
+    - maDuAn
       
   Lớp KhoDuLieuNhanVien (EmployeeRepository): Lưu trữ và truy xuất thông tin nhân viên từ cơ sở dữ liệu, bao gồm phương thức thanh toán và thông tin cơ bản của nhân viên.
-      **Phương thức:**
-       - layThongTinNhanVien(maNhanVien)
+  
+   **Phương thức:**
+    - layThongTinNhanVien(maNhanVien)
  
