@@ -119,4 +119,62 @@
    **Phương thức:**
    
     - layThongTinNhanVien(maNhanVien)
+
+ #### 3.2. Biểu đồ Sequence cho ca sử dụng Payment
+
+ ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3fTVnk55UM6PXrVbAUZQARWytDsTd17sSFVIa8p4l8oG_CCBynIi50pr52eFhofLI7wuQtcfGWb8Ig449CU5LGFG8E-CV9TIdypKKZ-WS5XcAiWK8ps5d8UxbbO23JYy9IzTeIGpJo4FPBr26SX-ZTn4c69DBapzk5rdhATGKlHmrsA5ieUx6t4OZjEX8PcvgSc9HIb0SqomkAy4AatOeoXECWKQTMn3AOf9H8GQKcHOAPW1lPNnSFV6P8MCp8Uxsr5Cq2Z8ACtFIm_9A4s6cf0833I7rBmKK9m20000__y30000)
  
+ #### 3.3. Xác định nhiệm vụ của từng lớp phân tích
+ 
+  - Lớp NhânViên: Gửi yêu cầu thanh toán và cung cấp thông tin cá nhân và phương thức thanh toán cho lớp dịch vụ thanh toán.
+  
+  - Lớp DịchVụThanhToán:
+   - Nhận yêu cầu thanh toán từ nhân viên. 
+   - Truy xuất thông tin nhân viên và timecard.  
+   - Tính toán lương dựa trên số giờ làm việc, lương cố định, và hoa hồng (nếu có).  
+   - Lưu thông tin thanh toán vào cơ sở dữ liệu.  
+   - Thực hiện thanh toán theo phương thức được chỉ định.
+  
+  - Lớp KhoDuLieuNhanVien: Cung cấp thông tin về nhân viên như phương thức thanh toán và loại nhân viên.
+  
+  - Lớp KhoDuLieuThanhToán: Lưu thông tin về các khoản thanh toán đã thực hiện.
+  
+  - Lớp Timecard: Cung cấp thông tin về số giờ làm việc để tính toán lương.
+
+ #### 3.4. Biểu đồ lớp (Class Diagram) mô tả các lớp phân tích
+
+![Diagram](https://www.planttext.com/api/plantuml/png/Z58nJiGm4EppYYsF8X-WG8SK2IIYQuYkNpacjkJOAB6HqEbUm2j0ek4BAIZoadi1Ny2-62SNkw2TdTsTcTsVuNlRQ-oqQKL61FOzxDZu8VTy_99mo01oQ777q29KmZKywexBvenhAjE5PsQKR2fcI6Nhh5Au8WY5F6uzPbv1SHhU2DkVXa_VFxvFMW1aWw_BeGLgUYveFc6bMxsHVlYLfRmeNayKA-ZUWg4_fWK95MyfmQxs4RYryxOSUdN7LOcjRIOMVxA6jC-gCBSfJmzC5QRar0JVao7X_BYqU0XpCmVkXCttI4oB0XB6_CsRVUerSf7BGiBSSgaXgZifYqV9yviGsHfFNJDBdjYnevp-GLtCtL9PkrV-1G00__y30000)
+
+### 4. Phân tích ca sử dụng Maintain Timecard
+ 
+ #### 4.1 Xác định các lớp phân tích cho ca sử dụng Maintain Timecard
+ 
+ ##### Dưới đây là các lớp phân tích chính trong ca sử dụng Maintain Timecard:
+
+  Lớp NhânViên (Employee): Đại diện cho nhân viên nhập thông tin về giờ làm việc và mã dự án. Lớp này lưu trữ thông tin cá nhân và cung cấp quyền truy cập vào các timecard của nhân viên.
+  
+   Thuộc tính:
+   - maNhanVien
+   - tenNhanVien
+   - danhSachTimecard
+
+  Lớp Timecard: Chứa thông tin về số giờ làm việc và mã dự án của nhân viên. Timecard có thể được tạo mới, sửa đổi hoặc xóa bỏ bởi nhân viên.
+
+   Thuộc tính:
+   - ngay
+   - soGioLamViec
+   - maDuAn
+
+  Lớp DịchVụTimecard (TimecardService): Chịu trách nhiệm xử lý các hoạt động liên quan đến timecard, bao gồm việc tạo mới, cập nhật hoặc xóa timecard. Lớp này quản lý logic nghiệp vụ khi nhân viên thay đổi thông tin giờ làm việc.
+
+   Phương thức:
+   - taoTimecard(nhanVien)
+   - capNhatTimecard(timecard)
+   - xoaTimecard(timecard)
+     
+  Lớp KhoDuLieuTimecard (TimecardRepository): Lưu trữ và truy vấn dữ liệu timecard từ cơ sở dữ liệu, hỗ trợ các thao tác thêm mới, cập nhật và xóa timecard.
+
+   Phương thức:
+   - luuTimecard(timecard)
+   - layTimecard(maNhanVien)
+   - xoaTimecard(timecard)
