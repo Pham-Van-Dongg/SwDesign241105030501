@@ -82,6 +82,7 @@
   Lớp NhânViên (Employee): Đại diện cho mỗi nhân viên trong hệ thống. Lớp này có nhiệm vụ lưu thông tin cơ bản như mã nhân viên, tên, phương thức thanh toán và loại nhân viên (trả lương theo giờ, trả lương cố định, có hoa hồng).
 
   **Thuộc tính:**
+  
    - maNhanVien
    - tenNhanVien
    - phuongThucThanhToan
