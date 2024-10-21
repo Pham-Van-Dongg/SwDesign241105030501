@@ -117,5 +117,6 @@
   Lớp KhoDuLieuNhanVien (EmployeeRepository): Lưu trữ và truy xuất thông tin nhân viên từ cơ sở dữ liệu, bao gồm phương thức thanh toán và thông tin cơ bản của nhân viên.
   
    **Phương thức:**
+   
     - layThongTinNhanVien(maNhanVien)
  
