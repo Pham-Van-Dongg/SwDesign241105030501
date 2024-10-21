@@ -1,8 +1,8 @@
 ## Báo cáo phân tích kiến trúc và ca sử dụng hệ thống "Payroll System"
 
-#### 1. Phân tích kiến trúc
+### 1. Phân tích kiến trúc
 
- ##### 1.1. Đề xuất kiến trúc
+ #### 1.1. Đề xuất kiến trúc
 
  - **Kiến trúc Client-server**
    - **Client:** Ứng dụng desktop cài trên máy của nhân viên, họ có thể nhập thông tin về timecard, đơn hàng, và thay đổi phương thức thanh toán.
@@ -25,49 +25,49 @@
  
 ![Diagram](https://www.planttext.com/api/plantuml/png/d9GnIyD068Rt_8gFJ3eKmT51IbkeOYaAiRWUQSWTffUGD4AHJWuE8kZWu5XB5o5OSCiX3f7-Z_i5_WNlMjeclOIctlgztyFxtht9B_kk1dtazyEUetd8l4Qs1Ve9P_TWOCwUgGtdQE2xZgF3hGRYh4JDv9D0ao0N6aJeAUnTdkulLVAO3Wg2kM8XQEFaZNP8yavJec6X_2BayPWQFcSFYdwevNYvuYo2Ll85RHjBWWSTpYQgeuOWcbZEZ2IYk3MRpaOYPx6dzKAf22a-wLacyhlbn1XHRBZ9I6NdnZNyS01r7aUUX7n0IsOErRXds9NpnRXKWCn6YGnP_QunaiZ481etzbJlDSvUwpWSS7P7VvuuUo6Dsc4HDxTfbSfnqOCVWHx8odJ5WDhw1YDTlnqX1T8ifItkgKCiAWasPuzaXztLc_ndT_q-sUqDnCgVN2_ga20uisbuq9TTlE7nX2fEbbOLJ3h4DiZQiuh9v550soucls62D8UOylFIDL6mgaMxyX_v1m00__y30000)
 
-##### 2. Cơ chế phân tích:
+### 2. Cơ chế phân tích:
 
- ##### 2.1 Cơ chế xác thực 
+ #### 2.1 Cơ chế xác thực 
  
 Mục đích: Đảm bảo rằng chỉ nhân viên hợp lệ mới có thể truy cập vào hệ thống.
 Giải thích: Với khoảng 5000 nhân viên, hệ thống cần đảm bảo tính bảo mật. Mỗi nhân viên cần đăng nhập để truy cập các chức năng, đảm bảo rằng không ai khác có thể xem hoặc thay đổi thông tin của người khác.
  
- ##### 2.2 Cơ chế phân quyền
+ #### 2.2 Cơ chế phân quyền
  
   - Mục đích: Chỉ cho phép nhân viên chỉnh sửa thông tin của chính mình và Payroll Administrator quản lý toàn bộ thông tin.
   - Giải thích: Nhân viên chỉ có quyền nhập thông tin timecard và phương thức thanh toán của họ. Payroll Administrator có quyền cao hơn, quản lý việc thêm, xóa nhân viên và chạy các báo cáo quản lý.
  
- ##### 2.3 Cơ chế tính lương
+ #### 2.3 Cơ chế tính lương
  
   - Mục đích: Tính toán chính xác lương của nhân viên theo phương thức trả lương của từng loại (hàng giờ, cố định, có hoa hồng).
   - Giải thích: Mỗi nhân viên có phương thức trả lương khác nhau, cần hệ thống tính toán lương theo số giờ làm việc, hoa hồng, và tính thêm lương làm ngoài giờ.
  
- ##### 2.4 Cơ chế nhập và quản lý timecard
+ #### 2.4 Cơ chế nhập và quản lý timecard
  
   - Mục đích: Nhân viên có thể nhập giờ làm việc và hệ thống ghi nhận chính xác số giờ để tính lương.
   - Giải thích: Hệ thống cần cho phép nhân viên ghi nhận thông tin về giờ làm việc từng ngày, và tính toán lương dựa trên những dữ liệu này.
 
- ##### 2.5 Cơ chế báo cáo cho nhân viên
+ #### 2.5 Cơ chế báo cáo cho nhân viên
  
   - Mục đích: Nhân viên có thể truy vấn các thông tin như số giờ đã làm, lương nhận được, số dư ngày nghỉ phép.
   - Giải thích: Hệ thống cần cung cấp chức năng cho phép nhân viên xem được các thông tin cá nhân quan trọng liên quan đến công việc và lương của họ.
  
- ##### 2.6 Cơ chế lựa chọn phương thức thanh toán
+ #### 2.6 Cơ chế lựa chọn phương thức thanh toán
  
   - Mục đích: Cho phép nhân viên chọn phương thức thanh toán như séc, chuyển khoản ngân hàng, hoặc nhận trực tiếp tại văn phòng.
   - Giải thích: Phương thức thanh toán là quyền lựa chọn của nhân viên, và hệ thống phải hỗ trợ lưu và áp dụng đúng phương thức mỗi lần trả lương.
  
- ##### 2.7 Cơ chế tự động thanh toán (Payment Scheduling)
+ #### 2.7 Cơ chế tự động thanh toán (Payment Scheduling)
  
   - Mục đích: Hệ thống tự động tính lương và trả lương cho nhân viên vào mỗi thứ 6 và ngày làm việc cuối cùng của tháng.
   - Giải thích: Để đảm bảo lương luôn được trả đúng hạn mà không cần can thiệp thủ công, hệ thống phải tự động hóa hoàn toàn quá trình thanh toán.
  
- ##### 2.8 Cơ chế tích hợp với DB2 Project Management Database
+ #### 2.8 Cơ chế tích hợp với DB2 Project Management Database
  
   - Mục đích: Đọc dữ liệu từ cơ sở dữ liệu DB2 để tra cứu thông tin về các dự án và mã số dự án nhưng không làm thay đổi dữ liệu.
   - Giải thích: Vì Acme không muốn thay đổi hệ thống DB2 hiện có, nên việc tích hợp cần diễn ra một cách an toàn, chỉ đọc dữ liệu mà không làm thay đổi cấu trúc hoặc nội dung của cơ sở dữ liệu đó.
 
- #### Kết quả mong đợi:
+ ### Kết quả mong đợi:
 
  - Authentication & Authorization: Bảo mật dữ liệu, mỗi nhân viên chỉ có thể truy cập thông tin của chính họ, Payroll Admin có quyền quản lý cao nhất.
  - Tính toán lương: Xử lý các phương thức thanh toán khác nhau như trả theo giờ, lương cố định, và lương có hoa hồng.
