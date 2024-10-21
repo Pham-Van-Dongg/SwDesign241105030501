@@ -74,4 +74,38 @@ Giải thích: Với khoảng 5000 nhân viên, hệ thống cần đảm bảo 
  - Data Validation: Kiểm tra tính hợp lệ của dữ liệu nhập vào (thời gian làm việc, đơn hàng).
  - Payment Scheduling: Lên lịch tự động trả lương vào ngày quy định mà không cần can thiệp thủ công.
  - Legacy System Integration: Đảm bảo hệ thống mới có thể đọc dữ liệu từ DB2 mà không làm thay đổi cấu trúc dữ liệu của hệ thống cũ.
+
+### 3. Phân tích ca sử dụng payment
+
+ #### 3.1 Xác định các lớp phân tích cho ca sử dụng Payment
+
+  Lớp NhânViên (Employee): Đại diện cho mỗi nhân viên trong hệ thống. Lớp này có nhiệm vụ lưu thông tin cơ bản như mã nhân viên, tên, phương thức thanh toán và loại nhân viên (trả lương theo giờ, trả lương cố định, có hoa hồng).
+
+  Thuộc tính:
+   - maNhanVien
+   tenNhanVien
+phuongThucThanhToan
+loaiNhanVien
+Lớp DịchVụThanhToán (PaymentService): Lớp chính chịu trách nhiệm xử lý việc tính toán và thực hiện thanh toán cho nhân viên. Lớp này sử dụng thông tin từ nhân viên và timecard để tính toán số tiền phải trả.
+
+Thuộc tính:
+ngayThanhToan
+Phương thức:
+tinhToanLuong(nhanVien)
+thucHienThanhToan(nhanVien)
+Lớp KhoDuLieuThanhToán (PaymentRepository): Quản lý việc lưu trữ và truy vấn thông tin thanh toán từ cơ sở dữ liệu.
+
+Phương thức:
+luuThongTinThanhToan(thongTinThanhToan)
+layThongTinThanhToan(maNhanVien)
+Lớp Timecard: Đại diện cho thẻ thời gian mà nhân viên nhập liệu. Thẻ này chứa thông tin về số giờ làm việc và mã dự án tương ứng.
+
+Thuộc tính:
+ngay
+soGioLamViec
+maDuAn
+Lớp KhoDuLieuNhanVien (EmployeeRepository): Lưu trữ và truy xuất thông tin nhân viên từ cơ sở dữ liệu, bao gồm phương thức thanh toán và thông tin cơ bản của nhân viên.
+
+Phương thức:
+layThongTinNhanVien(maNhanVien)
  
