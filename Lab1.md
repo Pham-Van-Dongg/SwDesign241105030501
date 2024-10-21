@@ -217,11 +217,11 @@
     - DịchVụTimecard xử lý logic nghiệp vụ như tạo mới, cập nhật hoặc xóa timecard.
     - KhoDữLiệuTimecard thực hiện thao tác truy vấn và lưu trữ timecard trong cơ sở dữ liệu.
     
-  #### 5. Hợp nhất kết quả phân tích
+  ### 5. Hợp nhất kết quả phân tích
 
-   ##### 5.1 Tóm tắt các lớp phân tích chính
+   #### 5.1 Tóm tắt các lớp phân tích chính
    
-   ###### Các lớp phân tích được xác định qua hai ca sử dụng:
+   ##### Các lớp phân tích được xác định qua hai ca sử dụng:
 
     NhânViên(Employee): Đại diện cho nhân viên với các thông tin cơ bản như mã nhân viên, tên, phương thức thanh toán, danh sách timecard.
 
@@ -237,7 +237,7 @@
 
     KhoDữLiệuThanhToán (PaymentRepository): Quản lý lưu trữ và truy vấn thông tin về thanh toán.
 
-   ##### 5.2 Mối quan hệ giữa các lớp
+   #### 5.2 Mối quan hệ giữa các lớp
    
    ###### Qua hai ca sử dụng, chúng ta thấy rằng các lớp có mối quan hệ qua lại với nhau để hoàn thành các nhiệm vụ khác nhau trong hệ thống:
     
@@ -247,8 +247,35 @@
     
     DịchVụThanhToán cũng liên kết với KhoDữLiệuThanhToán để lưu và quản lý thông tin thanh toán.
     
-   ##### 5.3 Biểu đồ lớp hợp nhất
+   #### 5.3 Biểu đồ lớp hợp nhất
    
    ##### Biểu đồ lớp dưới đây hợp nhất các lớp từ hai ca sử dụng và thể hiện mối quan hệ giữa chúng:
 
    ![Diagram](https://www.planttext.com/api/plantuml/png/d5InJiCm4Dtp5HxBa1z0g2fI9928kZJgVd92RIcngyH6L8YPWQy0YOM53yZ0q2_95_0Bd9lKJM8tGxVuxjszz-vE-Qj_5vM2KkaY3sWELKMMRFyfrdp_BSXBG4X82bWom4Wco3LPgPABpI6kCk5FR9cMOfCmJHFCiqJ2291BuFxI5F4he2pXHKQXJ34RyqhT7D_pu3NeT5f8gr9iO8Ve25HsU5VoZiiO2kIW67z4JjNPYVHjZzOsZ9hwdR9rKtzrilSVxGW8KRor4HjZCz59ly8cJvAdBGJjtcFGMdPXFgQ-2Mm2yXZnir3Ouk2K1QdkOm1wbd0UO4KyC8awVcBUr6zwj7H2SjWbp6oHsoNFJeTWkfrAplGSUSkrdfPjA8-08TNe12xqw6pLAEeydhQcnX57erCo5ElaZPpUVCDmRczt77SFOm9XxGIUUp9OxpO2xvcxS6_tYOBUEImoaPh_oJy0003__mC0)
+   #### 5.4. Hợp nhất luồng hoạt động
+   
+   Khi hợp nhất hai ca sử dụng, hệ thống có thể hoạt động theo luồng sau:
+
+   **Maintain Timecard:**
+
+    - Nhân viên nhập hoặc cập nhật thông tin timecard.
+    - Thông tin này được gửi đến lớp DịchVụTimecard để xử lý nghiệp vụ.
+    - DịchVụTimecard tương tác với KhoDữLiệuTimecard để lưu hoặc cập nhật timecard.
+   
+   **Payment:**
+
+    - Vào ngày trả lương, hệ thống sẽ tự động kích hoạt chức năng thanh toán.
+    
+    - DịchVụThanhToán truy xuất thông tin nhân viên và timecard từ KhoDữLiệuNhânViên và KhoDữLiệuTimecard để tính toán số tiền cần trả.
+    
+    - DịchVụThanhToán thực hiện thanh toán và lưu thông tin vào KhoDuLieuThanhToán.
+
+   #### 5.5 Tài liệu mô tả
+   
+   **Qua quá trình phân tích và hợp nhất, hệ thống quản lý payroll của Acme Inc. sẽ bao gồm các chức năng:**
+
+   - Quản lý thông tin nhân viên: Lưu trữ thông tin nhân viên, phương thức thanh toán, và quản lý timecard.
+     
+   - Duy trì timecard: Cho phép nhân viên tạo, cập nhật hoặc xóa thông tin timecard.
+     
+   - Thanh toán: Tự động tính toán lương và thực hiện thanh toán dựa trên thông tin nhân viên và timecard.
