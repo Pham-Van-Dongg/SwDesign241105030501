@@ -27,15 +27,15 @@
 
 ##### 2. Cơ chế phân tích:
 
- ##### 2.1 Cơ chế xác thực (Authentication)
+ ##### 2.1 Cơ chế xác thực 
  
 Mục đích: Đảm bảo rằng chỉ nhân viên hợp lệ mới có thể truy cập vào hệ thống.
 Giải thích: Với khoảng 5000 nhân viên, hệ thống cần đảm bảo tính bảo mật. Mỗi nhân viên cần đăng nhập để truy cập các chức năng, đảm bảo rằng không ai khác có thể xem hoặc thay đổi thông tin của người khác.
  
- ##### 2.2 Cơ chế phân quyền (Authorization)
+ ##### 2.2 Cơ chế phân quyền
  
-Mục đích: Chỉ cho phép nhân viên chỉnh sửa thông tin của chính mình và Payroll Administrator quản lý toàn bộ thông tin.
-Giải thích: Nhân viên chỉ có quyền nhập thông tin timecard và phương thức thanh toán của họ. Payroll Administrator có quyền cao hơn, quản lý việc thêm, xóa nhân viên và chạy các báo cáo quản lý.
+  - Mục đích: Chỉ cho phép nhân viên chỉnh sửa thông tin của chính mình và Payroll Administrator quản lý toàn bộ thông tin.
+  - Giải thích: Nhân viên chỉ có quyền nhập thông tin timecard và phương thức thanh toán của họ. Payroll Administrator có quyền cao hơn, quản lý việc thêm, xóa nhân viên và chạy các báo cáo quản lý.
  
  ##### 2.3 Cơ chế tính lương
  
