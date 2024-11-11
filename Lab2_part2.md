@@ -5,7 +5,6 @@
 Lớp NhânViên (Employee): Đại diện cho mỗi nhân viên được tạo mới trong hệ thống. Lớp này lưu trữ thông tin cơ bản về nhân viên, bao gồm mã nhân viên, tên, phương thức thanh toán và loại nhân viên.
 
 **Thuộc tính:**
-
   -	maNhanVien
   -	tenNhanVien
   -	phuongThucThanhToan
@@ -15,7 +14,7 @@ Lớp DịchVụNhanViên (EmployeeService): Xử lý các nghiệp vụ liên q
 
 **Phương thức:**
 
- - taoNhanVien(nhanVien)
+  - taoNhanVien(nhanVien)
    
 Lớp KhoDuLieuNhanVien (EmployeeRepository): Quản lý việc lưu trữ và truy xuất thông tin nhân viên từ cơ sở dữ liệu.
 
@@ -30,9 +29,9 @@ Lớp KhoDuLieuNhanVien (EmployeeRepository): Quản lý việc lưu trữ và t
 
 ### 3. Xác định nhiệm vụ của từng lớp phân tích
 
-  Lớp NhânViên: Cung cấp thông tin nhân viên mới cho lớp dịch vụ.
-  Lớp DịchVụNhanViên: Thực hiện nghiệp vụ xác thực thông tin và lưu trữ thông tin nhân viên mới.
-  Lớp KhoDuLieuNhanVien: Quản lý việc lưu trữ và truy xuất thông tin nhân viên trong cơ sở dữ liệu.
+- Lớp NhânViên: Cung cấp thông tin nhân viên mới cho lớp dịch vụ.
+- Lớp DịchVụNhanViên: Thực hiện nghiệp vụ xác thực thông tin và lưu trữ thông tin nhân viên mới.
+- Lớp KhoDuLieuNhanVien: Quản lý việc lưu trữ và truy xuất thông tin nhân viên trong cơ sở dữ liệu.
 
 ### 4. Biểu đồ lớp (Class Diagram) mô tả các lớp phân tích:
    
