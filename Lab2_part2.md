@@ -4,7 +4,7 @@
 
 Lớp NhânViên (Employee): Đại diện cho mỗi nhân viên được tạo mới trong hệ thống. Lớp này lưu trữ thông tin cơ bản về nhân viên, bao gồm mã nhân viên, tên, phương thức thanh toán và loại nhân viên.
 
-Thuộc tính:
+**Thuộc tính:**
 
   -	maNhanVien
   -	tenNhanVien
@@ -13,12 +13,13 @@ Thuộc tính:
 
 Lớp DịchVụNhanViên (EmployeeService): Xử lý các nghiệp vụ liên quan đến việc tạo nhân viên mới. Lớp này chịu trách nhiệm xác minh và lưu thông tin nhân viên vào cơ sở dữ liệu.
 
-Phương thức:
+**Phương thức:**
 
  - taoNhanVien(nhanVien)
- - Lớp KhoDuLieuNhanVien (EmployeeRepository): Quản lý việc lưu trữ và truy xuất thông tin nhân viên từ cơ sở dữ liệu.
+   
+Lớp KhoDuLieuNhanVien (EmployeeRepository): Quản lý việc lưu trữ và truy xuất thông tin nhân viên từ cơ sở dữ liệu.
 
-Phương thức:
+**Phương thức:**
 
   -	luuThongTinNhanVien(nhanVien)
   -	layThongTinNhanVien(maNhanVien)
@@ -37,12 +38,12 @@ Phương thức:
    
 ![Diagram](https://www.planttext.com/api/plantuml/png/Z94z2i9048NxFSMKMkG2ASGYdM9Zi5_Ma5bOPyNi22AUm5i8QQmih4nX4V0UEO5NC87uWnl1hNRVpFjuCtilhiFCoPNZXH7Ao2o32KgQwOHWAw0-0IpaImfXwbQQqhRY4lfLMY9RIcDa5TST65lfjHWhjM_VYJP7L1LxXREgoByI0JXfdrgFteIdrg_lQwldRzO8RSHZdR27CimnDaar_OLiNNBZkJhMrFyWD65U3K4mw9el1CMKWgek-H8SbkVwuJG1ONaWMEloIAB3rj3y2KCmjnF_meXXGlFcqny0003__mC0)
 
-Quan hệ giữa các lớp:
+**Quan hệ giữa các lớp:**
 
 -	EmployeeService liên kết với EmployeeRepository để lưu thông tin nhân viên.
 -	Employee chứa các thuộc tính cơ bản của nhân viên và được xử lý bởi EmployeeService.
   
-Nhiệm vụ của các lớp:
+**Nhiệm vụ của các lớp:**
 
 -	Employee chứa dữ liệu nhân viên.
 -	EmployeeService xử lý logic nghiệp vụ cho quá trình tạo nhân viên.
@@ -54,19 +55,20 @@ Nhiệm vụ của các lớp:
 
 Lớp TàiKhoan (Account): Đại diện cho tài khoản người dùng trong hệ thống, bao gồm tên đăng nhập và mật khẩu.
 
-Thuộc tính:
+**Thuộc tính:**
 
 -	tenDangNhap
 -	matKhau
   
 Lớp DịchVụXacThuc (AuthenticationService): Xử lý quá trình xác thực khi người dùng đăng nhập vào hệ thống.
 
-Phương thức:
+**Phương thức:**
 
 -	xacThuc(tenDangNhap, matKhau)
--	Lớp KhoDuLieuTaiKhoan (AccountRepository): Lưu trữ và truy xuất thông tin tài khoản từ cơ sở dữ liệu.
+
+Lớp KhoDuLieuTaiKhoan (AccountRepository): Lưu trữ và truy xuất thông tin tài khoản từ cơ sở dữ liệu.
   
-Phương thức:
+**Phương thức:**
 
 - layTaiKhoan(tenDangNhap)
   
@@ -84,11 +86,11 @@ Phương thức:
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/TD6nRi8m40RWtKzn8mnvWGmLgh9HiJJgVZAHRScS4R4b469YPEe3TEZ0YDHANOg73a6yXv-0Ly0HA8bGwids-Rxx9L_ytwYqkB1kfXdNM9Om4Swep960DOEu4h05PKXY8d4EARpQXI9nBytGZYMwzdh3xamM_8xBj-3tJU_D0rWYpwNZ0secfUtKOJmy6wCBf1ORIvEv5rMunt006bUvD2HoHKrnq9Tus9rIqwsL94zzULCGmHyKM5dzn5TM4PpUJzku9HcEXpdhwQcfdhGfw73ShxeKYVDNy1yAfjLl3FIFrIMMrIUFGl3Vl0CnDYfeMl_V5G00__y30000)
 
-Quan hệ giữa các lớp:
+**Quan hệ giữa các lớp:**
 
 - AuthenticationService liên kết với AccountRepository để lấy thông tin tài khoản.
   
-Nhiệm vụ của các lớp:
+**Nhiệm vụ của các lớp:**
 
 - Account chứa dữ liệu tài khoản.
 - AuthenticationService xử lý xác thực.
@@ -101,17 +103,18 @@ Nhiệm vụ của các lớp:
 
 Lớp DịchVụTinhLuong (PayrollService): Xử lý quá trình tính lương cho tất cả nhân viên.
 
-Phương thức:
+**Phương thức:**
 
 -	tinhToanLuongTatCa()
 -	Lớp KhoDuLieuNhanVien (EmployeeRepository): Lấy thông tin về từng nhân viên để tính lương.
 
-Phương thức:
+**Phương thức:**
 
 -	layTatCaNhanVien()
--	Lớp KhoDuLieuThanhToan (PaymentRepository): Lưu trữ thông tin thanh toán cho từng nhân viên.
 
-Phương thức:
+Lớp KhoDuLieuThanhToan (PaymentRepository): Lưu trữ thông tin thanh toán cho từng nhân viên.
+
+**Phương thức:**
 
 - luuThongTinThanhToan(thongTinThanhToan)
 
@@ -129,11 +132,11 @@ Phương thức:
    
 ![Diagram](https://www.planttext.com/api/plantuml/png/T9AnJiCm48PtFyMDPSWBP40Tib6nO7KtZfMpv9vHuqEg43C3Jz614GaaDWyCaVeUUG9U0QUaRP1RJ_RTVz_T_V9F_9wtGQq3hvpGJhKjL7ryrRZiuvkqX0lsrC2JWFtHg3RxoEmAIdZqjXRFOgoxHKLBQsWK5x1Inr09Ts5jgHap3pWm9BAMIO7Iguda29GuY2oTD0Tow-KVjVPyxymOfKPjfhnA1NEYtQ2lU64DvrivvgpNB6JTotoYgGldV2kAQvYO4BftGWY-snAutSTkczQzL7Pctd8eOWZOVQLNi9IkwW2y2CfjJ8DW7pyreEtZot-Ac1kgXy_m2m00__y30000)
 
-Quan hệ giữa các lớp:
+**Quan hệ giữa các lớp:**
 
 - PayrollService liên kết với EmployeeRepository và PaymentRepository để lấy thông tin và lưu trữ kết quả.
   
-Nhiệm vụ của các lớp:
+**Nhiệm vụ của các lớp:**
 
 -	PayrollService xử lý tính toán lương.
 -	EmployeeRepository cung cấp dữ liệu nhân viên.
@@ -145,7 +148,7 @@ Nhiệm vụ của các lớp:
    
 Lớp ĐơnHang (PurchaseOrder): Đại diện cho đơn hàng, lưu trữ các thông tin về sản phẩm, số lượng và giá.
 
-Thuộc tính:
+**Thuộc tính:**
 
 -	maDonHang
 -	tenSanPham
@@ -154,7 +157,7 @@ Thuộc tính:
   
 Lớp DịchVụDonHang (PurchaseOrderService): Xử lý việc tạo mới, cập nhật, hoặc xóa đơn hàng.
 
-Phương thức:
+**Phương thức:**
 
 -	taoDonHang(donHang)
 -	capNhatDonHang(donHang)
@@ -162,7 +165,7 @@ Phương thức:
   
 Lớp KhoDuLieuDonHang (PurchaseOrderRepository): Lưu trữ và truy xuất thông tin đơn hàng từ cơ sở dữ liệu.
 
-Phương thức:
+**Phương thức:**
 
 -	luuDonHang(donHang)
 -	layDonHang(maDonHang)
@@ -181,11 +184,11 @@ Phương thức:
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bToJc9niO9BVfvBOeb7ObwwGZMN0X3eAXJd0mN18bOAmIL5cNdfK8cyzCHAc68h1I0h5IfHaf-N7fmVafcQ1nHFoIzDoadbgkM2sV1mTtToHjZ3tKinx59GA4c4MQQH0hSKeKuJo2lBpqo1gavEBF3BI2mXGKT5VY9Hgk6kzSx8TodroKmjnUBOdD9Iygp6355aYv5iqjMrmnfUN5W34QGQYtkvk1nIyr90KGm0003__mC0)
 
-Quan hệ giữa các lớp:
+**Quan hệ giữa các lớp:**
 
-  - PurchaseOrderService liên kết với PurchaseOrderRepository để lưu hoặc cập nhật đơn hàng.
+- PurchaseOrderService liên kết với PurchaseOrderRepository để lưu hoặc cập nhật đơn hàng.
     
-Nhiệm vụ của các lớp:
+**Nhiệm vụ của các lớp:**
 
 - PurchaseOrder chứa dữ liệu đơn hàng.
 -	PurchaseOrderService xử lý logic nghiệp vụ.
@@ -197,7 +200,7 @@ Nhiệm vụ của các lớp:
 
 Lớp BaoCao (Report): Đại diện cho báo cáo hành chính.
 
-Thuộc tính:
+**Thuộc tính:**
 
 -	loaiBaoCao
 -	ngayBaoCao
@@ -205,13 +208,13 @@ Thuộc tính:
 
 Lớp DịchVụBaoCao (ReportService): Xử lý việc tạo báo cáo mới.
 
-Phương thức:
+**Phương thức:**
 
 - taoBaoCao(baoCao)
   
 Lớp KhoDuLieuBaoCao (ReportRepository): Lưu trữ và truy xuất thông tin báo cáo từ cơ sở dữ liệu.
 
-Phương thức:
+**Phương thức:**
 
 - luuBaoCao(baoCao)
   
@@ -229,11 +232,11 @@ Phương thức:
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bToJc9niO9JOhvpOhv2DPS24EWgv2P21QmKWakAClFIeU9v-PakfNdf6CBfYPKXODKkYIMfNBLSK5DT7kxkJiu8UxXxAOhv2WebYVaG4GrDe2O84ofLKPfO0fLBWha1mWSfBSlFJ46OxvsHxrBgavbQYcPyJcafOIEWUdHrxJ3SoONXS90gDDkuk1nIyr90GGW0003__mC0)
 
-Quan hệ giữa các lớp:
+**Quan hệ giữa các lớp:**
 
 - ReportService liên kết với ReportRepository để lưu trữ báo cáo.
   
-Nhiệm vụ của các lớp:
+**Nhiệm vụ của các lớp:**
 
 -	Report chứa dữ liệu báo cáo.
 -	ReportService xử lý tạo báo cáo.
