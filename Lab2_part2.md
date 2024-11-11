@@ -16,7 +16,6 @@ Lớp DịchVụNhanViên (EmployeeService): Xử lý các nghiệp vụ liên q
 Phương thức:
 
  - taoNhanVien(nhanVien)
-   
  - Lớp KhoDuLieuNhanVien (EmployeeRepository): Quản lý việc lưu trữ và truy xuất thông tin nhân viên từ cơ sở dữ liệu.
 
 Phương thức:
@@ -30,9 +29,9 @@ Phương thức:
 
 ### 3. Xác định nhiệm vụ của từng lớp phân tích
 
-Lớp NhânViên: Cung cấp thông tin nhân viên mới cho lớp dịch vụ.
-Lớp DịchVụNhanViên: Thực hiện nghiệp vụ xác thực thông tin và lưu trữ thông tin nhân viên mới.
-Lớp KhoDuLieuNhanVien: Quản lý việc lưu trữ và truy xuất thông tin nhân viên trong cơ sở dữ liệu.
+  Lớp NhânViên: Cung cấp thông tin nhân viên mới cho lớp dịch vụ.
+  Lớp DịchVụNhanViên: Thực hiện nghiệp vụ xác thực thông tin và lưu trữ thông tin nhân viên mới.
+  Lớp KhoDuLieuNhanVien: Quản lý việc lưu trữ và truy xuất thông tin nhân viên trong cơ sở dữ liệu.
 
 ### 4. Biểu đồ lớp (Class Diagram) mô tả các lớp phân tích:
    
@@ -142,7 +141,7 @@ Nhiệm vụ của các lớp:
 
 ## 4. Phân tích ca sử dụng "Maintain Purchase Order"
 
-1. Xác định các lớp phân tích cho ca sử dụng "Maintain Purchase Order"
+### 1. Xác định các lớp phân tích cho ca sử dụng "Maintain Purchase Order"
    
 Lớp ĐơnHang (PurchaseOrder): Đại diện cho đơn hàng, lưu trữ các thông tin về sản phẩm, số lượng và giá.
 
