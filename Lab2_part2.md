@@ -6,10 +6,10 @@ Lớp NhânViên (Employee): Đại diện cho mỗi nhân viên được tạo 
 
 **Thuộc tính:**
 
-  -	maNhanVien
-  -	tenNhanVien
-  -	phuongThucThanhToan
-  -	loaiNhanVien
+ -	maNhanVien
+ -	tenNhanVien
+ -	phuongThucThanhToan
+ -	loaiNhanVien
 
 Lớp DịchVụNhanViên (EmployeeService): Xử lý các nghiệp vụ liên quan đến việc tạo nhân viên mới. Lớp này chịu trách nhiệm xác minh và lưu thông tin nhân viên vào cơ sở dữ liệu.
 
