@@ -244,3 +244,6 @@
 | **PayrollService**                    | **business::Payroll**                    |
 | **ProjectManagementDatabaseController**| **applications::Payroll**                |
 
+## 4. Architectural layers and their dependencies
+
+![Diagram](https://www.planttext.com/api/plantuml/png/Z5GxJiD04Ett5ACqLBu0YgA4HA18YHH0L2Z5u4pi1NjjxQw38aXDGGCr5IKL1t11GIxY4t05rfyaZeb36ilMp7jlvhsHV-Aljj8eTUHxZ1t1yYM9duKBmd6N7mZszxiD7iv9WfQ1SC1DuYVGvlag71QYVOSEGQCJXXwtKVD0m23jRa2pcRsqMl300AvB7UFqUoIvq9SaPzocRY0CkUUHB4h1BTbwYC9m-oHq3pNUeAhsNL0Oo1N7c2tOPfwJI751Ia5HLJLJZN2U4kxaw0QIQc3zYlHwc3CI9547-O23o3YMlVMYZjY_sxRsa4yc7jrZxGGfx9IqxQPUBDBWpYCKUJeEJ-BFLNH9_1OMqMsoP5jnW6Mr_bW1nt2bIB6we79GnGW3wlkXborce5LF3i5Kgyr7owf6dKA49Zb5cpRWR1bsqFKK6zTciLw-R7ETJNdTd1fwAETciccm4xXFRSLHD1KaLQsC9pygWp6zCpun89KBSuEH_dyk52pPGPP9maAvpCBQ92RfV-4N003__mC0)
