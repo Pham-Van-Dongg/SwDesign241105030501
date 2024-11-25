@@ -38,11 +38,11 @@ Hệ thống chạy bảng lương được chia thành các hệ thống con v�
 
 #### 1. SystemClockInterface Subsystem
 
-     Mục đích: Cung cấp thông tin về thời gian.
+   Mục đích: Cung cấp thông tin về thời gian.
 
-  Thành phần chính:
+   Thành phần chính:
 
-  - Phương thức isPayday(): Kiểm tra xem hôm nay có phải ngày trả lương không.
+   - Phương thức isPayday(): Kiểm tra xem hôm nay có phải ngày trả lương không.
 
 #### 2. PayrollController Subsystem
 
