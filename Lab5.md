@@ -36,15 +36,15 @@ Hệ thống chạy bảng lương được chia thành các hệ thống con v�
 
 **Mô tả chi tiết các thành phần của từng hệ thống con**
 
-1. SystemClockInterface Subsystem
+#### 1. SystemClockInterface Subsystem
 
-  Mục đích: Cung cấp thông tin về thời gian.
+     Mục đích: Cung cấp thông tin về thời gian.
 
   Thành phần chính:
 
   - Phương thức isPayday(): Kiểm tra xem hôm nay có phải ngày trả lương không.
 
-2. PayrollController Subsystem
+#### 2. PayrollController Subsystem
 
   Mục đích: Điều phối toàn bộ quy trình chạy bảng lương.
 
@@ -55,7 +55,7 @@ Hệ thống chạy bảng lương được chia thành các hệ thống con v�
   - Phương thức getPaymentMethod(): Xác định phương thức thanh toán.
   - Phương thức deposit() hoặc print(): Gửi lương qua ngân hàng hoặc in phiếu lương.
 
-3. Employee Subsystem
+#### 3. Employee Subsystem
 
   Mục đích: Cung cấp thông tin liên quan đến nhân viên.
 
@@ -66,7 +66,7 @@ Hệ thống chạy bảng lương được chia thành các hệ thống con v�
   - Phương thức calculatePay(): Tính toán lương dựa trên thông tin chấm công hoặc hóa đơn.
   - Phương thức getBankInfo(): Truy xuất thông tin ngân hàng (cho nhân viên nhận lương qua chuyển khoản).
 
-4. External Subsystems
+#### 4. External Subsystems
 
   iPrintService:
 
@@ -76,7 +76,7 @@ Hệ thống chạy bảng lương được chia thành các hệ thống con v�
 
   - Phương thức deposit(Paycheck, BankInfo): Gửi giao dịch ngân hàng.
 
-5. Entity Subsystem
+#### 5. Entity Subsystem
 
   Paycheck:
 
