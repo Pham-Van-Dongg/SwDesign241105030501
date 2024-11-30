@@ -1159,3 +1159,119 @@ EmployeeSession sử dụng SecurityAccess để xác thực quyền truy cập 
 TimecardAccess → SecurityAccess:
 
 TimecardAccess sử dụng SecurityAccess để kiểm tra quyền truy cập timecard.
+Sơ đồ phụ thuộc:
+![Diagram](https://www.planttext.com/api/plantuml/png/d5HBJiCm4Dtd55wc4hr0L5Mb7qGbMYeLmNhg3Acf4qUsKob2d8m5H-8AsB6JVX8GRHRvUDuR-xsPoVVdrqXfaBf8UK0vA4MMaB8i8Uy1CHSNObVaOI5vHDPQca0l8e-RDwGw-0WyOvRcN9I8QrIAYSnJcNe6pcA_62htdCT7YJP2S8IiWcz1tL9gG66XK1vWDqIY4eMas45iZl34KgGWuud8j1ISewnEqISvbFPxEbv01WdAYApELXnC2gjfEex8VENUNJZ5pAnM9qnGrzk4w2MVoAcZDNgo1PdWiaWtA5Le00zCwO633ojGaSUWiScg_SiXbI7j1NCP5Up_0sqyEHVgwtAPZ4ithGFU_lO6rR9L7P6fkLUVMrDVzIBa3Wri0VcWBlqT5w2TLH37CrFRCgH7hXwQf4eHESAnQSxXQvZ6ftiRwgJrFC4APvb6-GeKErlduFhVxT1oq4s3ftUCHoEWiogj2LaZBIJJvKdQlPrGuyzLazSnS_t-i3rVl-0wvwpLinRPDEIPDIUnyv-G3Pvg3aQOnVO_zmC00F__0m00)
+
+# III. Login
+### 1. Login
+1. Distribute subsystem behavior
+Hệ thống con trong hình liên quan đến chức năng Login. Các hành vi được phân phối như sau:
+
+Actor (Any User):
+
+Nhập tên người dùng và mật khẩu vào hệ thống.
+Gửi yêu cầu xác thực thông tin đăng nhập.
+LoginForm:
+
+Nhận thông tin đăng nhập từ người dùng.
+Kiểm tra tính hợp lệ của tên người dùng và mật khẩu (validate username and password).
+Phản hồi kết quả xác thực (thành công hoặc thất bại).
+2. Document subsystem elements
+Phần tử chính:
+Actor (Any User):
+
+Vai trò: Người dùng tương tác với hệ thống.
+Hành vi:
+Nhập tên người dùng và mật khẩu.
+Gửi thông tin đăng nhập đến hệ thống.
+LoginForm:
+
+Vai trò: Giao diện và logic xử lý thông tin đăng nhập.
+Hành vi:
+Nhận thông tin đăng nhập.
+Thực hiện kiểm tra tính hợp lệ của tên người dùng và mật khẩu.
+Phản hồi kết quả đăng nhập.
+3.Describe subsystem dependencies
+Mô tả phụ thuộc:
+Any User → LoginForm:
+
+Người dùng nhập thông tin đăng nhập và gửi yêu cầu đến LoginForm.
+LoginForm:
+
+Nhận thông tin từ người dùng.
+Thực hiện xác thực thông tin đăng nhập.
+
+Sơ đồ phụ thuộc:
+![Diagram](https://www.planttext.com/api/plantuml/png/d50n3i8m3Dpp2gjJaU037L2xC34W40ymnAeYfKwLf4KLucKCF8alq4O9804BNYoVxJkVxzTRwJnQtpLQ73Kw1nKFUqSMpWB68FPafvgneOhbPXmv6IlpBc85xBnLNC-XZQs4p0heZPBY8YBpsjIALyOsaRj7hIHw-fl-O8mcv40cbMir3a5ZIwxJFhSXVJadMLmibcz75P05jv2q0La-PJFnclpOIqv-hPR4Slhm0m00__y30000)
+
+## 2. Login (with security)
+1. Distribute subsystem behavior
+Hệ thống con bao gồm các phần tử chính:
+
+Employee: Người dùng tương tác với hệ thống.
+MainEmployeeForm: Giao diện chính xử lý thông tin đăng nhập.
+LoginForm: Thành phần xử lý logic xác thực thông tin đăng nhập.
+EmployeeSession (ISecureUser): Quản lý phiên làm việc của người dùng sau khi đăng nhập thành công.
+Phân phối hành vi:
+Employee:
+
+Bắt đầu quy trình đăng nhập.
+Nhập tên người dùng và mật khẩu.
+Gửi yêu cầu đăng nhập.
+MainEmployeeForm:
+
+Mở giao diện đăng nhập.
+Nhận thông tin từ người dùng (tên người dùng, mật khẩu).
+Gửi yêu cầu xác thực đến LoginForm.
+Thiết lập ngữ cảnh bảo mật (Security Context) nếu đăng nhập thành công.
+Hiển thị các chức năng khả dụng sau khi đăng nhập.
+LoginForm:
+
+Xác thực thông tin đăng nhập (validateUserIDPassword).
+Trả về kết quả đăng nhập.
+EmployeeSession (ISecureUser):
+
+Lưu trữ thông tin phiên người dùng sau khi đăng nhập thành công.
+Cung cấp ngữ cảnh người dùng (user context) cho các chức năng khác.
+2. Document subsystem elements
+Employee
+Vai trò: Người dùng tương tác với hệ thống.
+Hành vi:
+start(): Bắt đầu quy trình đăng nhập.
+enterUserName(): Nhập tên người dùng.
+enterPassword(): Nhập mật khẩu.
+loginUser(): Gửi yêu cầu đăng nhập.
+MainEmployeeForm
+Vai trò: Giao diện chính xử lý quy trình đăng nhập.
+Hành vi:
+open(): Mở giao diện đăng nhập.
+setupSecurityContext(): Thiết lập ngữ cảnh bảo mật.
+displayAvailOperations(): Hiển thị các chức năng khả dụng.
+close(): Đóng giao diện đăng nhập.
+LoginForm
+Vai trò: Xử lý logic xác thực thông tin đăng nhập.
+Hành vi:
+validateUserIDPassword(): Kiểm tra tính hợp lệ của tên người dùng và mật khẩu.
+EmployeeSession (ISecureUser)
+Vai trò: Quản lý phiên làm việc của người dùng.
+Hành vi:
+new(UserID): Tạo phiên làm việc mới.
+getUserContext(): Trả về ngữ cảnh người dùng.
+3. Describe subsystem dependencies
+Mối quan hệ giữa các phần tử:
+Employee → MainEmployeeForm:
+
+Người dùng khởi tạo quy trình đăng nhập và nhập thông tin đăng nhập qua giao diện chính.
+MainEmployeeForm → LoginForm:
+
+Gửi thông tin đăng nhập đến LoginForm để xác thực.
+Nhận kết quả đăng nhập từ LoginForm.
+MainEmployeeForm → EmployeeSession (ISecureUser):
+
+Nếu đăng nhập thành công, MainEmployeeForm thiết lập ngữ cảnh bảo mật bằng cách tạo một phiên làm việc mới qua EmployeeSession.
+EmployeeSession (ISecureUser):
+
+Lưu trữ thông tin phiên làm việc và cung cấp ngữ cảnh người dùng cho các chức năng khác.
+
+Sơ đồ phụ thuộc:
+![Diagram](https://www.planttext.com/api/plantuml/png/T59BQiCm4Dth5CAh59mBU15I-e52snHC3p2r1YEGDK8ZEpMb9-kYH-eLAgLEua-ZfKRlE_hv-jvo01_QneZA0BEyQvoX7b5-21dFORgwAcH7MXrkq0Rqhup-6HfSJbuYoPwycamCrTecpEdsKmnwJw3jKVEUV3FeaaCxeM0ChIknQhqE_Gr5gVUfBwNP6UYlEz1cvz13q6HvygGonBYqy9ZSZRGxC5f1m6JuuNOSw8t88DWpzEYyHEOeDn1OtA_-m8KiWzUs7hkeCQJXF4FaF7M_Nc-MnHGo6xQHpvUGpxlFnvLdOi6L1Cwn8_Ebp1Umyzp9sxyBoiGMhKhVwnS00F__0m00)
