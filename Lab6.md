@@ -38,16 +38,16 @@
 
 ## 3.1. Xác định các operations
 
-![Diagram]()
+![Diagram](https://www.planttext.com/api/plantuml/png/V95D3i8W48NtSmgMkl02NPWcTUD2O-89fZ2jDHGK1XDZF9aBZ-GL5Fn9jQdBWVUzuJrkbslk6Hs7LWD8ZTwBbRDRabnOmyvgJKwSG8WM3TRqkfiXusYSYODj59m16iFaAfGavXr5YPuIkm_aZZzePumENwiNQLTBvjkc8fQRDqUCZVQ3JiK6NKtBq9QlzyjqK5X5cLYpQqpTMniTadRtdEVg8ttmrdCcb0sbfaZsMvfCfhtuqEiZgWPZmd017Iub_Q_inWV8oQZumNS0003__mC0)
 
 ## 3.2. Xác định các trạng thái
 
-![Diagram]()
+![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3XSNa5MIgk2PbrcIcPYJMPMQ0XLHSaijISvG22ZApqfDBb5mIIn9L598B5O02qD5GO9GvM3XpBnqc6wGb49GQabHPcfPQWfO9qW8BeAi3M4digx470MtnCmSJCs9EH1nc14G3bUqLgo2hguTYbUGs60v3CUZ2o1KWVm2Ou15KPsFImhkE1Jb26DHPM2g8V9GZpYavgM0eWO0003__mC0)
 
 ## 3.3. Xác định các thuộc tính
 
-![Diagram]()
+![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3XTNSavYSR52G55-LcfoYND-NabHVavEQf52DPS241H0n3rJh1I2IueoyzB1eiaPYKNfgNwbkKcfHLOApaWyP4qkYIM9LZ2JGHokMZJhG8BuBSelBh5IICalJSf9HUX6jX2g7U8Yv_oKLBZ-MYvCJ-dgsg4w5xiIP3SxfEQbW08A0000__y30000)
 
 ## 3.4. Xác định các phụ thuộc, quan hệ kết hợp
 
-![Diagram]()
+![Diagram](https://www.planttext.com/api/plantuml/png/V58nRiCm3Dpr2etDa0zuA0AuAE2XHO6Y3w0bnd4XIob93KNWbtNea_g5HaxIAXPYRJpoZkHHFr_V6nOWYODJoZXWrYyKtj587RnGS0v97vG-llq9RsobNuLwtqsesG5r-1o75gdITHRbf0SGg2xAAPYIRuoicmnjWL6DIlLUaBPWiCYUP_c8I9zPwcvrhJxEbda23nqEwET2MnIpkp1He7SyrqfbZJSkskEqnOAFIG1viNi2bqqCB9Ms8ROE_zbvhpFzv7OTBFxnHrKURBs-Btqjh4nLD_rHjvtBUDEwovLNZctGs_JLVW400F__0m00)
